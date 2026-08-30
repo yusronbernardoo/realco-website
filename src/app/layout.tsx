@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SplashScreen from "@/components/SplashScreen";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const viewport = {
   width: "device-width",
@@ -44,6 +45,7 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
+        <FloatingWhatsApp />
         <Footer />
       </body>
     </html>
