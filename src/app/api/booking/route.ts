@@ -5,6 +5,7 @@ import { generateAvailableSlots } from '@/lib/availability';
 import { createEvent, EventInput } from '@/lib/googleCalendar';
 import { SERVICES, BARBERS } from '@/lib/data';
 
+export const dynamic = 'force-dynamic';
 
 const bookingSchema = z.object({
   serviceId: z.string().min(1),

@@ -62,9 +62,9 @@ export async function generateAvailableSlots(barberId: string, dateStr: string, 
   let events: CalendarEvent[] = [];
   try {
     events = await getEvents(calendarId, timeMin, timeMax);
-  } catch (e) {
+  } catch (e: any) {
     console.error("Failed to fetch calendar events:", e);
-    throw new Error("Jadwal sedang tidak dapat dimuat. Silakan coba lagi.");
+    throw new Error(`Google Calendar Error: ${e.message}`);
   }
 
   // 3. Mark slots overlapping with existing events as unavailable
