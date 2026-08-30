@@ -514,13 +514,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
-      {/* MOBILE STICKY CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full z-40 shadow-2xl">
-        <Link href="/booking" className="block w-full bg-gold text-forest-dark text-center py-5 text-[11px] font-bold tracking-[0.2em] uppercase">
-          BOOKING SEKARANG
-        </Link>
-      </div>
     </div>
   );
 }
