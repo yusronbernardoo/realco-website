@@ -62,9 +62,10 @@ export async function generateAvailableSlots(barberId: string, dateStr: string, 
   let events: CalendarEvent[] = [];
   try {
     events = await getEvents(calendarId, timeMin, timeMax);
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error("Failed to fetch calendar events:", e);
-    throw new Error(`Google Calendar Error: ${e.message}`);
+    const errorMessage = e instanceof Error ? e.message : 'Unknown error';
+    throw new Error(`Google Calendar Error: ${errorMessage}`);
   }
 
   // 3. Mark slots overlapping with existing events as unavailable
