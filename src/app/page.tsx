@@ -14,11 +14,11 @@ export default function Home() {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="relative min-h-[100dvh] bg-forest-dark flex items-center overflow-hidden pt-24 lg:pt-20">
+      <section className="relative min-h-[100dvh] bg-forest-dark flex items-start lg:items-center overflow-hidden pt-[100px] lg:pt-20 pb-20 lg:pb-0">
         <div className="max-w-6xl mx-auto w-full px-6 flex flex-col lg:flex-row relative z-10 h-full">
           
           {/* Text Section */}
-          <div className="w-full lg:w-[50%] py-12 flex flex-col justify-center">
+          <div className="w-full lg:w-[50%] pt-4 pb-12 lg:py-12 flex flex-col justify-start lg:justify-center">
             <p className="text-cream/80 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 lg:mb-3">
               REAL.CO
             </p>
@@ -32,7 +32,7 @@ export default function Home() {
             </p>
 
             {/* Google Rating */}
-            <div className="flex items-center gap-3 mb-8 lg:mb-6">
+            <div className="flex items-center gap-3 mb-6 lg:mb-6">
               <div className="flex text-gold">
                 {[1, 2, 3, 4].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
                 <StarHalf className="w-4 h-4 fill-current" />
@@ -42,7 +42,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-10 lg:mb-8">
+            <div className="flex flex-col sm:flex-row items-center gap-4 mb-8 lg:mb-8">
               <Link 
                 href="/booking" 
                 className="w-full sm:w-auto bg-gold text-forest-dark px-10 py-4 text-[10px] font-bold tracking-[0.2em] hover:bg-cream transition-colors uppercase text-center"
@@ -57,7 +57,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-10 text-[10px] tracking-[0.15em] font-medium uppercase pb-12 lg:pb-0">
+            <div className="flex flex-col sm:flex-row gap-6 lg:gap-10 text-[10px] tracking-[0.15em] font-medium uppercase pb-4 lg:pb-0">
               <div>
                 <p className="mb-1.5 text-gold font-bold tracking-[0.2em]">LOKASI</p>
                 <p className="text-cream/90 leading-relaxed">
