@@ -46,7 +46,7 @@ export async function appendBookingToSheet(bookingData: {
       requestBody: {
         values: [
           [
-            new Date().toLocaleString('id-ID'), // Waktu Booking
+            new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' }), // Waktu Booking
             bookingData.bookingCode,            // Kode Booking
             bookingData.customerName,           // Nama Pelanggan
             bookingData.customerWhatsapp,       // No WA
