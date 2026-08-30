@@ -16,7 +16,7 @@ export async function generateAvailableSlots(barberId: string, dateStr: string, 
   // 1. Get Barber Calendar ID
   // In the future, you can add a 'calendarId' property to the BARBERS array in data.ts for each capster
   const barber = BARBERS.find(b => b.id === barberId);
-  const calendarId = (barber as any)?.calendarId || process.env.GOOGLE_CALENDAR_ID || 'primary';
+  const calendarId = (barber as { calendarId?: string })?.calendarId || process.env.GOOGLE_CALENDAR_ID || 'primary';
 
   const targetDate = new Date(dateStr);
   const dayOfWeek = targetDate.getDay() === 0 ? 7 : targetDate.getDay();

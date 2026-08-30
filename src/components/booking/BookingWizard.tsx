@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { SERVICES, BARBERS } from "@/lib/data";
-import { ArrowRight, ArrowLeft, CheckCircle2, AlertCircle, Loader2, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, AlertCircle, Loader2, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 type BookingState = {

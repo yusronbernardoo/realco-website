@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Scissors, Coffee, Armchair, CalendarCheck, ArrowRight, Clock, MapPin, Play, ChevronDown, ChevronUp, Star, StarHalf } from "lucide-react";
+import { Scissors, Coffee, Armchair, CalendarCheck, ArrowRight, ChevronDown, ChevronUp, Star, StarHalf } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
 export default function Home() {

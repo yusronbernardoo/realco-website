@@ -44,23 +44,20 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Layanan atau Barber tidak ditemukan.' }, { status: 404 });
     }
 
-    calendarId = (barber as any).calendar_id || process.env.GOOGLE_CALENDAR_ID || 'primary';
+    calendarId = (barber as { calendar_id?: string }).calendar_id || process.env.GOOGLE_CALENDAR_ID || 'primary';
 
     // 3. Server Recheck - Validate Date/Time
     const slots = await generateAvailableSlots(data.barberId, data.date, service.duration);
-    const selectedSlot = slots.find(s => s.time === data.time);
+    const requestedSlot = slots.find(s => s.time === data.time);
     
-    if (!selectedSlot || !selectedSlot.available) {
-      return NextResponse.json({ 
-        error: 'Maaf, slot tersebut baru saja diambil. Silakan pilih waktu lain.' 
-      }, { status: 409 });
+    if (!requestedSlot || !requestedSlot.available) {
+      return NextResponse.json({ error: 'Jadwal tersebut sudah tidak tersedia. Silakan pilih waktu lain.' }, { status: 400 });
     }
 
     // Calculate times
     const startTime = new Date(`${data.date}T${data.time}:00+07:00`); // Assuming WIB / GMT+7
     const endTime = new Date(startTime.getTime() + service.duration * 60000);
     const bookingCode = `RC${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
-    const idempotencyKey = `${data.customer.whatsapp}-${data.date}-${data.time}-${data.serviceId}`;
 
     console.log(`[BOOKING_ATTEMPT] bookingCode: ${bookingCode}, Phone: ***${data.customer.whatsapp.slice(-4)}`);
 
