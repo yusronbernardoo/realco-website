@@ -83,8 +83,9 @@ export default function Home() {
             src="/images/hero-banner-hd-wide.jpg" 
             alt="REAL.CO Barber and Cafe experience" 
             fill
-            className="object-cover object-center"
+            className="object-cover object-[30%_center] lg:object-center"
             priority
+            quality={90}
           />
         </div>
       </section>
