@@ -29,11 +29,11 @@ export async function generateAvailableSlots(barberId: string, dateStr: string, 
   const slotInterval = 30; // minutes
   const slots: { time: string; start: Date; end: Date; available: boolean }[] = [];
 
-  const startTime = new Date(dateStr);
-  startTime.setHours(hours.start, 0, 0, 0);
+  const startTimeStr = `${dateStr}T${hours.start.toString().padStart(2, '0')}:00:00+07:00`;
+  const startTime = new Date(startTimeStr);
 
-  const endTime = new Date(dateStr);
-  endTime.setHours(hours.end, 0, 0, 0);
+  const endTimeStr = `${dateStr}T${hours.end.toString().padStart(2, '0')}:00:00+07:00`;
+  const endTime = new Date(endTimeStr);
 
   let currentSlot = new Date(startTime);
 
@@ -45,7 +45,14 @@ export async function generateAvailableSlots(barberId: string, dateStr: string, 
       break;
     }
 
-    const timeString = `${currentSlot.getHours().toString().padStart(2, '0')}:${currentSlot.getMinutes().toString().padStart(2, '0')}`;
+    // Format time explicitly in WIB
+    const timeString = currentSlot.toLocaleTimeString('en-US', {
+      timeZone: 'Asia/Jakarta',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+
     slots.push({
       time: timeString,
       start: new Date(currentSlot),
