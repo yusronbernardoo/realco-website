@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-forest-dark text-cream pt-16 pb-8 px-6 border-t border-white/5">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="lg:col-span-2 space-y-4">
           <Link href="/" className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 rounded-full overflow-hidden border border-cream flex-shrink-0">
@@ -26,19 +26,6 @@ export default function Footer() {
             </div>
           </Link>
           <p className="text-cream/80 font-serif text-lg leading-relaxed max-w-xs font-medium">Where style <br />meets comfort.</p>
-        </div>
-
-        {/* Links */}
-        <div className="space-y-6">
-          <h3 className="font-medium tracking-[0.15em] text-[10px] text-cream/50 uppercase">TAUTAN</h3>
-          <ul className="space-y-3 text-[11px] font-medium tracking-wide text-cream">
-            <li><Link href="/" className="hover:text-gold transition-colors">Beranda</Link></li>
-            <li><Link href="/#hair-studio" className="hover:text-gold transition-colors">Hair Studio</Link></li>
-            <li><Link href="/#kafe" className="hover:text-gold transition-colors">Kafe</Link></li>
-            <li><Link href="/#services" className="hover:text-gold transition-colors">Layanan</Link></li>
-            <li><Link href="/#ruang-kami" className="hover:text-gold transition-colors">Ruang Kami</Link></li>
-            <li><Link href="/#visit" className="hover:text-gold transition-colors">Kontak</Link></li>
-          </ul>
         </div>
 
         {/* Hair Studio & Kafe (Combined for space or separate) */}

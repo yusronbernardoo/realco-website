@@ -20,7 +20,7 @@ export default function Header() {
 
   const navLinks = [
     { name: "BERANDA", href: "/" },
-    { name: "STUDIO", href: "/#hair-studio" },
+    { name: "STYLIST", href: "/#hair-studio" },
     { name: "MENU", href: "/#kafe" },
     { name: "GALERI", href: "/#ruang-kami" },
     { name: "LAYANAN", href: "/#services" },

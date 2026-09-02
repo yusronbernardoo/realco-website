@@ -292,7 +292,7 @@ export default function Home() {
           <FadeIn className="text-center mb-16">
             <p className="text-gold text-[10px] tracking-[0.2em] font-medium uppercase mb-4">Galeri Kami</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-cream leading-tight">
-              SUASANA STUDIO KAMI
+              SUASANA STUDIO
             </h2>
           </FadeIn>
           

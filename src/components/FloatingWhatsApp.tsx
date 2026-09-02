@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 
 export default function FloatingWhatsApp() {
   // Ganti dengan nomor WA yang benar (format: 628...)
-  const waNumber = "6281234567890"; 
+  const waNumber = "62881036695165"; 
   const message = encodeURIComponent("Halo REAL.CO, saya ingin bertanya tentang booking...");
 
   return (
