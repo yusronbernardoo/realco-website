@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface FadeInProps {
@@ -10,23 +9,10 @@ interface FadeInProps {
   direction?: "up" | "down" | "left" | "right";
 }
 
-export default function FadeIn({ children, delay = 0, className = "", direction = "up" }: FadeInProps) {
-  const directionOffset = {
-    up: { y: 15, x: 0 },
-    down: { y: -15, x: 0 },
-    left: { x: 15, y: 0 },
-    right: { x: -15, y: 0 },
-  };
-
+export default function FadeIn({ children, className = "" }: FadeInProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, ...directionOffset[direction] }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className={className}
-    >
+    <div className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }

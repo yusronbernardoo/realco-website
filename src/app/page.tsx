@@ -14,15 +14,15 @@ export default function Home() {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="relative min-h-[100dvh] bg-forest-dark flex items-start lg:items-center overflow-hidden pt-[70px] lg:pt-20 pb-4 lg:pb-0">
+      <section className="relative min-h-[100dvh] bg-forest-dark flex items-center overflow-hidden pt-[60px] lg:pt-20 pb-10 lg:pb-0">
         <div className="max-w-6xl mx-auto w-full px-6 flex flex-col lg:flex-row relative z-10 h-full">
           
           {/* Text Section */}
-          <div className="w-full lg:w-[50%] pt-2 pb-2 lg:py-12 flex flex-col justify-start lg:justify-center">
+          <div className="w-full lg:w-[50%] py-10 lg:py-12 flex flex-col justify-center">
             <p className="text-cream/80 font-bold tracking-[0.3em] text-[8px] sm:text-[10px] uppercase mb-1 lg:mb-3">
               REAL.CO
             </p>
-            <h1 className="font-serif text-[2rem] leading-[1.1] sm:text-5xl lg:text-[4rem] text-cream lg:leading-[1.05] mb-2 lg:mb-4 animate-fade-in-up font-bold">
+            <h1 className="font-serif text-[2rem] leading-[1.1] sm:text-5xl lg:text-[4rem] text-cream lg:leading-[1.05] mb-2 lg:mb-4 font-bold">
               WHERE<br />STYLE<br />
               <span className="text-gold">MEETS<br />COMFORT</span>
             </h1>
@@ -159,7 +159,7 @@ export default function Home() {
                 <Link href={`/booking?barber=${barber.id}`} className="group cursor-pointer block h-full">
                   {/* Image Container */}
                   <div className="relative aspect-[4/5] overflow-hidden bg-forest-dark/50 shadow-2xl mb-6">
-                    <Image src={barber.image} alt={barber.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <Image src={barber.image} alt={barber.name} fill className="object-cover " />
                     <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-forest-dark/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                     
                     {/* Clean Bottom Overlay inside Image */}
@@ -218,7 +218,7 @@ export default function Home() {
             ].map((item, idx) => (
               <FadeIn key={item.name} delay={idx * 0.2} direction="up" className="flex flex-col sm:flex-row bg-white border border-forest-dark/5 hover:shadow-xl transition-shadow duration-300">
                 <div className="relative w-full sm:w-[45%] aspect-[4/5] sm:aspect-[4/5] overflow-hidden bg-forest-dark/5 shrink-0">
-                  <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-700 hover:scale-105" />
+                  <Image src={item.image} alt={item.name} fill className="object-cover " />
                 </div>
                 <div className="p-5 sm:p-5 lg:p-6 flex flex-col justify-center sm:w-[55%] text-center sm:text-left overflow-hidden">
                   <span className="text-[9px] font-bold tracking-[0.2em] text-gold uppercase mb-3">{item.badge}</span>
@@ -249,7 +249,7 @@ export default function Home() {
             ].map((item, idx) => (
               <FadeIn key={item.name} delay={(idx % 4) * 0.1} className={`bg-white group cursor-pointer border border-forest-dark/5 hover:shadow-xl transition-shadow duration-300 ${!showAllCafe && idx >= 4 ? 'max-md:hidden' : ''}`}>
                 <div className="relative aspect-square overflow-hidden bg-forest-dark/5 w-full">
-                  <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src={item.image} alt={item.name} fill className="object-cover " />
                 </div>
                 <div className="p-4 md:p-5 text-center">
                   <h3 className="font-extrabold text-forest-dark tracking-widest text-[10px] md:text-xs mb-1.5 leading-snug">{item.name}</h3>
@@ -303,7 +303,7 @@ export default function Home() {
                 loop 
                 muted 
                 playsInline 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover "
               />
               <div className="absolute inset-0 bg-forest-dark flex items-center justify-center -z-10">
                 <span className="text-cream/30 text-xs tracking-widest uppercase">Video 1</span>
@@ -318,7 +318,7 @@ export default function Home() {
                 loop 
                 muted 
                 playsInline 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover "
               />
               <div className="absolute inset-0 bg-forest-dark flex items-center justify-center -z-10">
                 <span className="text-cream/30 text-xs tracking-widest uppercase">Video 2</span>
@@ -333,7 +333,7 @@ export default function Home() {
                 loop 
                 muted 
                 playsInline 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover "
               />
               <div className="absolute inset-0 bg-forest-dark flex items-center justify-center -z-10">
                 <span className="text-cream/30 text-xs tracking-widest uppercase">Video 3</span>
