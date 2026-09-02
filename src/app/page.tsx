@@ -14,65 +14,72 @@ export default function Home() {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="relative min-h-[100dvh] bg-forest-dark flex items-center overflow-hidden pt-[60px] lg:pt-20 pb-10 lg:pb-0">
-        <div className="max-w-6xl mx-auto w-full px-6 flex flex-col lg:flex-row relative z-10 h-full">
+      <section className="relative min-h-[100dvh] bg-forest-dark flex flex-col overflow-hidden pt-[80px] pb-8 lg:pt-20 lg:pb-0">
+        <div className="max-w-6xl mx-auto w-full px-6 flex flex-col lg:flex-row relative z-10 flex-grow">
           
           {/* Text Section */}
-          <div className="w-full lg:w-[50%] py-10 lg:py-12 flex flex-col justify-center">
-            <p className="text-cream/80 font-bold tracking-[0.3em] text-[8px] sm:text-[10px] uppercase mb-1 lg:mb-3">
-              REAL.CO
-            </p>
-            <h1 className="font-serif text-[2rem] leading-[1.1] sm:text-5xl lg:text-[4rem] text-cream lg:leading-[1.05] mb-2 lg:mb-4 font-bold">
-              WHERE<br />STYLE<br />
-              <span className="text-gold">MEETS<br />COMFORT</span>
-            </h1>
+          <div className="w-full lg:w-[50%] flex flex-col justify-between lg:justify-center flex-grow py-4 lg:py-12">
             
-            <p className="text-cream/70 text-[10px] sm:text-sm md:text-base font-light leading-relaxed max-w-sm mb-3 lg:mb-4">
-              Hair Studio & Mini Cafe Premium di Malang.
-            </p>
+            {/* TOP/CENTER CONTENT */}
+            <div className="flex-1 flex flex-col justify-center lg:justify-start">
+              <p className="text-cream/80 font-bold tracking-[0.3em] text-[9px] sm:text-[10px] uppercase mb-2 lg:mb-3">
+                REAL.CO
+              </p>
+              <h1 className="font-serif text-[2.5rem] leading-[1.05] sm:text-5xl lg:text-[4rem] text-cream mb-4 font-bold">
+                WHERE<br />STYLE<br />
+                <span className="text-gold">MEETS<br />COMFORT</span>
+              </h1>
+              
+              <p className="text-cream/70 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-sm mb-5 lg:mb-6">
+                Hair Studio & Mini Cafe Premium di Malang.
+              </p>
 
-            {/* Google Rating */}
-            <div className="flex items-center gap-2 mb-4 lg:mb-6">
-              <div className="flex text-gold">
-                {[1, 2, 3, 4].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />)}
-                <StarHalf className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
-              </div>
-              <div className="text-[8px] sm:text-[10px] tracking-widest text-cream/70 font-medium uppercase">
-                <span className="text-cream">4.5/5</span> DARI 26 ULASAN
+              {/* Google Rating */}
+              <div className="flex items-center gap-2">
+                <div className="flex text-gold">
+                  {[1, 2, 3, 4].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />)}
+                  <StarHalf className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
+                </div>
+                <div className="text-[9px] sm:text-[10px] tracking-widest text-cream/70 font-medium uppercase">
+                  <span className="text-cream">4.5/5</span> DARI 26 ULASAN
+                </div>
               </div>
             </div>
 
-            {/* Buttons: Side by side on mobile */}
-            <div className="flex flex-row items-center gap-2 sm:gap-3 mb-5 lg:mb-8 w-full">
-              <Link 
-                href="/booking" 
-                className="flex-1 bg-gold text-forest-dark px-2 py-3 lg:px-10 lg:py-4 text-[8px] sm:text-[10px] font-bold tracking-[0.2em] hover:bg-cream transition-colors uppercase text-center"
-              >
-                BOOKING
-              </Link>
-              <Link 
-                href="#kafe" 
-                className="flex-1 border border-cream/20 text-cream px-2 py-3 lg:px-10 lg:py-4 text-[8px] sm:text-[10px] font-bold tracking-[0.2em] hover:border-cream transition-colors uppercase text-center"
-              >
-                MENU
-              </Link>
-            </div>
-
-            {/* Info: Side by side on mobile */}
-            <div className="flex flex-row gap-4 sm:gap-10 text-[8px] sm:text-[10px] tracking-[0.1em] sm:tracking-[0.15em] font-medium uppercase pb-2 lg:pb-0 w-full justify-between">
-              <div className="flex-1">
-                <p className="mb-1 text-gold font-bold tracking-[0.15em] sm:tracking-[0.2em]">LOKASI</p>
-                <p className="text-cream/90 leading-relaxed">
-                  Jl Ir. Soekarno, No.7,<br />
-                  Dadaprejo, Batu
-                </p>
+            {/* BOTTOM CONTENT (Anchored to bottom of screen on mobile) */}
+            <div className="mt-8 lg:mt-12 flex flex-col gap-6 lg:gap-8 w-full">
+              {/* Buttons */}
+              <div className="flex flex-row items-center gap-3 w-full">
+                <Link 
+                  href="/booking" 
+                  className="flex-1 bg-gold text-forest-dark px-4 py-4 lg:px-10 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] hover:bg-cream transition-colors uppercase text-center"
+                >
+                  BOOKING
+                </Link>
+                <Link 
+                  href="#kafe" 
+                  className="flex-1 border border-cream/20 text-cream px-4 py-4 lg:px-10 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] hover:border-cream transition-colors uppercase text-center"
+                >
+                  MENU
+                </Link>
               </div>
-              <div className="flex-1">
-                <p className="mb-1 text-gold font-bold tracking-[0.15em] sm:tracking-[0.2em]">BUKA SETIAP HARI</p>
-                <p className="text-cream/90 leading-relaxed">
-                  09.00 - 21.00 <br />
-                  Jumat: 13.00 - 21.00
-                </p>
+
+              {/* Info */}
+              <div className="flex flex-row gap-4 sm:gap-10 text-[8px] sm:text-[10px] tracking-[0.1em] sm:tracking-[0.15em] font-medium uppercase justify-between w-full">
+                <div className="flex-1">
+                  <p className="mb-1.5 text-gold font-bold tracking-[0.15em] sm:tracking-[0.2em]">LOKASI</p>
+                  <p className="text-cream/90 leading-relaxed">
+                    Jl Ir. Soekarno, No.7,<br />
+                    Dadaprejo, Batu
+                  </p>
+                </div>
+                <div className="flex-1">
+                  <p className="mb-1.5 text-gold font-bold tracking-[0.15em] sm:tracking-[0.2em]">BUKA SETIAP HARI</p>
+                  <p className="text-cream/90 leading-relaxed">
+                    09.00 - 21.00 <br />
+                    Jumat: 13.00 - 21.00
+                  </p>
+                </div>
               </div>
             </div>
           </div>
