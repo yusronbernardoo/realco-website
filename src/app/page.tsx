@@ -14,44 +14,44 @@ export default function Home() {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="relative min-h-[100dvh] bg-forest-dark flex items-start lg:items-center overflow-hidden pt-[100px] lg:pt-20 pb-20 lg:pb-0">
+      <section className="relative min-h-[100dvh] bg-forest-dark flex items-start lg:items-center overflow-hidden pt-[80px] lg:pt-20 pb-10 lg:pb-0">
         <div className="max-w-6xl mx-auto w-full px-6 flex flex-col lg:flex-row relative z-10 h-full">
           
           {/* Text Section */}
-          <div className="w-full lg:w-[50%] pt-4 pb-12 lg:py-12 flex flex-col justify-start lg:justify-center">
-            <p className="text-cream/80 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 lg:mb-3">
+          <div className="w-full lg:w-[50%] pt-2 pb-6 lg:py-12 flex flex-col justify-start lg:justify-center">
+            <p className="text-cream/80 font-bold tracking-[0.3em] text-[9px] sm:text-[10px] uppercase mb-2 lg:mb-3">
               REAL.CO
             </p>
-            <h1 className="font-serif text-5xl lg:text-[4rem] text-cream leading-[1.05] mb-5 lg:mb-4 animate-fade-in-up font-bold">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[4rem] text-cream leading-[1.05] mb-3 lg:mb-4 animate-fade-in-up font-bold">
               WHERE<br />STYLE<br />
               <span className="text-gold">MEETS<br />COMFORT</span>
             </h1>
             
-            <p className="text-cream/70 text-sm md:text-base font-light leading-relaxed max-w-sm mb-6 lg:mb-4">
+            <p className="text-cream/70 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-sm mb-4 lg:mb-4">
               Hair Studio & Mini Cafe Premium di Malang.
             </p>
 
             {/* Google Rating */}
-            <div className="flex items-center gap-3 mb-6 lg:mb-6">
+            <div className="flex items-center gap-2 mb-5 lg:mb-6">
               <div className="flex text-gold">
-                {[1, 2, 3, 4].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
-                <StarHalf className="w-4 h-4 fill-current" />
+                {[1, 2, 3, 4].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />)}
+                <StarHalf className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
               </div>
-              <div className="text-[10px] tracking-widest text-cream/70 font-medium uppercase">
+              <div className="text-[9px] sm:text-[10px] tracking-widest text-cream/70 font-medium uppercase">
                 <span className="text-cream">4.5/5</span> DARI 26 ULASAN
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-8 lg:mb-8">
+            <div className="flex flex-col sm:flex-row items-center gap-3 mb-6 lg:mb-8">
               <Link 
                 href="/booking" 
-                className="w-full sm:w-auto bg-gold text-forest-dark px-10 py-4 text-[10px] font-bold tracking-[0.2em] hover:bg-cream transition-colors uppercase text-center"
+                className="w-full sm:w-auto bg-gold text-forest-dark px-8 py-3 lg:px-10 lg:py-4 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] hover:bg-cream transition-colors uppercase text-center"
               >
                 BOOKING SEKARANG
               </Link>
               <Link 
                 href="#kafe" 
-                className="w-full sm:w-auto border border-cream/20 text-cream px-10 py-4 text-[10px] font-bold tracking-[0.2em] hover:border-cream transition-colors uppercase text-center"
+                className="w-full sm:w-auto border border-cream/20 text-cream px-8 py-3 lg:px-10 lg:py-4 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] hover:border-cream transition-colors uppercase text-center"
               >
                 LIHAT MENU
               </Link>

@@ -37,3 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Hide Netlify Drawer */
 netlify-drawer, #netlify-drawer, .netlify-drawer { display: none !important; }
 
+
+/* Hide Netlify Drawer strong rule */
+[id*='netlify'], [class*='netlify'] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important; }
+
