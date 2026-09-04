@@ -1,4 +1,3 @@
-import { MessageCircle } from "lucide-react";
 
 export default function FloatingWhatsApp() {
   // Ganti dengan nomor WA yang benar (format: 628...)

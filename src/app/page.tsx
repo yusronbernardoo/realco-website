@@ -7,7 +7,7 @@ import { Scissors, Coffee, Armchair, CalendarCheck, ArrowRight, ChevronDown, Che
 import FadeIn from "@/components/FadeIn";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'hair' | 'cafe'>('hair');
+
   const [showAllCafe, setShowAllCafe] = useState(false);
   const [showAllVideos, setShowAllVideos] = useState(false);
 
