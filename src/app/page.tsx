@@ -71,8 +71,8 @@ export default function Home() {
               <div className="flex-1">
                 <p className="mb-1 text-gold font-bold tracking-[0.15em] sm:tracking-[0.2em]">BUKA SETIAP HARI</p>
                 <p className="text-cream/90 leading-relaxed">
-                  09.00 - 21.00 <br />
-                  Jumat: 13.00 - 21.00
+                  SABTU - KAMIS: 12.00 - 21.00 <br />
+                  JUMAT: 13.00 - 21.00
                 </p>
               </div>
             </div>
@@ -127,41 +127,34 @@ export default function Home() {
           </FadeIn>
 
           {/* Barber Grid Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto mb-12">
             {[
               { 
                 id: 'B1',
                 name: "BERYL", 
                 role: "CAPSTER", 
-                specialty: "Classic & Gentleman Cut",
+                specialty: "Haircut + Hairwash + Styling",
                 bio: "Spesialis potongan rambut klasik dan rapi. Pilihan tepat untuk eksekutif yang menginginkan tampilan profesional dan elegan.",
                 price: "Rp 50.000", 
-                image: "/images/barbers/beryl.jpg" 
+                image: "/images/barbers/beryl.jpg",
+                imgClass: "object-cover object-[50%_80%]"
               },
               { 
                 id: 'B2',
-                name: "IKMAL", 
+                name: "RIJAL", 
                 role: "CAPSTER", 
-                specialty: "Modern Fade & Crop",
+                specialty: "Haircut + Hairwash + Styling",
                 bio: "Ahli dalam gaya potongan kekinian dengan teknik fade yang mulus. Sangat detail dan selalu up-to-date dengan tren masa kini.",
-                price: "Rp 50.000", 
-                image: "/images/barbers/ikmal.jpg" 
-              },
-              { 
-                id: 'B3',
-                name: "FAHRIZAL", 
-                role: "CAPSTER", 
-                specialty: "Hair Color & Treatment",
-                bio: "Pakar pewarnaan dan perawatan rambut. Memastikan rambutmu tidak hanya tampil keren dengan warna baru, tapi juga tetap sehat.",
-                price: "Rp 50.000", 
-                image: "/images/barbers/fahrizal.jpg" 
+                price: "Rp 40.000", 
+                image: "/images/barbers/fahrizal.jpg",
+                imgClass: "object-cover object-center"
               },
             ].map((barber, idx) => (
               <FadeIn key={barber.name} delay={idx * 0.2}>
                 <Link href={`/booking?barber=${barber.id}`} className="group cursor-pointer block h-full">
                   {/* Image Container */}
                   <div className="relative aspect-[4/5] overflow-hidden bg-forest-dark/50 shadow-2xl mb-6">
-                    <Image src={barber.image} alt={barber.name} fill className="object-cover " />
+                    <Image src={barber.image} alt={barber.name} fill className={barber.imgClass} />
                     <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-forest-dark/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                     
                     {/* Clean Bottom Overlay inside Image */}
@@ -189,11 +182,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="flex justify-center">
-            <a href="#services" className="inline-flex items-center text-[10px] font-medium tracking-[0.15em] text-cream hover:text-gold transition-colors uppercase border border-cream/20 px-8 py-4 hover:border-gold">
-              LIHAT SEMUA LAYANAN <ArrowRight className="ml-2 w-4 h-4" />
-            </a>
-          </div>
+
         </div>
       </section>
 
@@ -215,7 +204,7 @@ export default function Home() {
           {/* Signature Menu */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-20">
             {[
-              { name: "MOUNT BLANC", desc: "Espresso, Orange juice, Foam Cloud", price: "RP 25.000", image: "/images/menu/mount-blanc.jpg", badge: "SIGNATURE" },
+              { name: "MOUNT BLANC", desc: "Espresso, Orange juice, Foam Cloud", price: "RP 24.000", image: "/images/menu/mount-blanc.jpg", badge: "SIGNATURE" },
               { name: "BUTTERSCOTCH SEASALT LATTE", desc: "Espresso, Butterscotch, Seasalt", price: "RP 24.000", image: "/images/menu/butterscotch-seasalt.jpg", badge: "BEST SELLER" },
             ].map((item, idx) => (
               <FadeIn key={item.name} delay={idx * 0.2} direction="up" className="flex flex-col sm:flex-row bg-white border border-forest-dark/5 hover:shadow-xl transition-shadow duration-300">
@@ -240,14 +229,17 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
             {[
               { name: "PEACH GODDES", desc: "Espresso, Fruit syrup, Cloud Foam", price: "RP 23.000", image: "/images/menu/peach-goddess.jpg" },
-              { name: "AMERICANO PEACH COFFE", desc: "Espresso with Peach syrup", price: "RP 21.000", image: "/images/menu/americano-peach.jpg" },
+              { name: "AMERICANO PEACH COFFEE", desc: "Espresso with Peach syrup", price: "RP 20.000", image: "/images/menu/americano-peach.jpg" },
+              { name: "KOPI TUBRUK", desc: "Kopi Hitam Asli", price: "RP 10.000", image: "/images/menu/kopi-tubruk.jpg" },
               { name: "AMERICANO ICE/HOT", desc: "Espresso beans Rubusta & arabica", price: "RP 17.000", image: "/images/menu/americano.jpg" },
               { name: "CAFFE LATTE ICE/HOT", desc: "Espresso, Milk and Foam Milk", price: "RP 19.000", image: "/images/menu/caffe-latte.jpg" },
-              { name: "CHEESE COFFE", desc: "Espresso, Condensed Milk, Cheese cloud", price: "RP 21.000", image: "/images/menu/cheese-coffee.jpg" },
+              { name: "CHEESE COFFEE", desc: "Espresso, Condensed Milk, Cheese cloud", price: "RP 20.000", image: "/images/menu/cheese-coffee.jpg" },
               { name: "LYCHEE TEA", desc: "Lychee syrup, Green Tea, Lychee fruit", price: "RP 18.000", image: "/images/menu/lychee-tea.jpg" },
-              { name: "MATCHA LATTE", desc: "Matcha Premium, Milk, Vanilla Syrup", price: "RP 23.000", image: "/images/menu/matcha-latte.jpg" },
+              { name: "MATCHA LATTE", desc: "Matcha Premium, Milk, Vanilla Syrup", price: "RP 22.000", image: "/images/menu/matcha-latte.jpg" },
               { name: "CHOCO CHEESE", desc: "Chocolate Malt, Milk, Foam Cheese", price: "RP 20.000", image: "/images/menu/choco-cheese.jpg" },
-              { name: "WINE OF ARABIC", desc: "Grape syrup, Espresso, kismis", price: "RP 21.000", image: "/images/menu/wine-arabic.jpg" }
+              { name: "WINE OF ARABIC", desc: "Grape syrup, Espresso, kismis", price: "RP 22.000", image: "/images/menu/wine-arabic.jpg" },
+              { name: "ADD ON: ESPRESSO SHOT", desc: "Extra Espresso Shot", price: "RP 5.000", image: "/images/menu/espresso-shot.jpg" },
+              { name: "ADD ON: SYRUP", desc: "Extra Flavor Syrup", price: "RP 5.000", image: "/images/menu/syrup.jpg" }
             ].map((item, idx) => (
               <FadeIn key={item.name} delay={(idx % 4) * 0.1} className={`bg-white group cursor-pointer border border-forest-dark/5 hover:shadow-xl transition-shadow duration-300 ${!showAllCafe && idx >= 4 ? 'max-md:hidden' : ''}`}>
                 <div className="relative aspect-square overflow-hidden bg-forest-dark/5 w-full">
@@ -268,7 +260,7 @@ export default function Home() {
                 onClick={() => setShowAllCafe(true)}
                 className="text-[10px] font-bold tracking-[0.2em] text-forest-dark border-b border-forest-dark hover:text-gold hover:border-gold transition-colors uppercase pb-1"
               >
-                LIHAT SEMUA MENU (9)
+                LIHAT SEMUA MENU (12)
               </button>
             </div>
           )}
@@ -366,92 +358,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES MENU SECTION */}
-      <section id="services" className="scroll-mt-[100px] py-16 md:py-24 px-6 bg-off-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 md:mb-20">
-            <p className="text-forest-dark/50 text-[10px] tracking-[0.2em] font-medium uppercase mb-4">Daftar Harga</p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-forest-dark leading-tight">
-              LAYANAN KAMI
-            </h2>
-          </div>
-          
-          <div className="flex justify-center gap-4 mb-10">
-            <button 
-              onClick={() => setActiveTab('hair')}
-              className={`px-6 py-3 text-[10px] font-bold tracking-[0.15em] uppercase border transition-colors ${activeTab === 'hair' ? 'bg-forest-dark text-cream border-forest-dark' : 'bg-transparent text-forest-dark border-forest-dark/20'}`}
-            >
-              Hair Studio
-            </button>
-            <button 
-              onClick={() => setActiveTab('cafe')}
-              className={`px-6 py-3 text-[10px] font-bold tracking-[0.15em] uppercase border transition-colors ${activeTab === 'cafe' ? 'bg-forest-dark text-cream border-forest-dark' : 'bg-transparent text-forest-dark border-forest-dark/20'}`}
-            >
-              Mini Cafe
-            </button>
-          </div>
 
-          <div className="flex flex-col gap-12 md:gap-20">
-            {/* Barber Menu */}
-            <div className={activeTab === 'hair' ? 'block' : 'hidden'}>
-              <h3 className="font-medium tracking-[0.15em] text-lg text-forest-dark mb-8 md:mb-10 uppercase border-b border-forest-dark/10 pb-4 text-center">Hair Studio</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 md:gap-y-8">
-                {[
-                  { name: "Premium Haircut", desc: "Konsultasi, potong, cuci, styling, dan pijat ringan.", price: "Rp 60.000" },
-                  { name: "Basic Haircut", desc: "Potong rambut standar dengan hasil presisi.", price: "Rp 45.000" },
-                  { name: "Hot Towel Shave", desc: "Cukur kumis/jenggot dengan handuk hangat.", price: "Rp 35.000" },
-                  { name: "Hair Color / Highlight", desc: "Pewarnaan rambut profesional (bleach & color).", price: "Mulai Rp 150.000" },
-                  { name: "Kids Haircut", desc: "Potong rambut khusus anak di bawah 12 tahun.", price: "Rp 40.000" },
-                ].map((item, idx) => (
-                  <div key={idx} className="group">
-                    <div className="flex justify-between items-baseline mb-2">
-                      <h4 className="text-forest-dark font-medium text-base group-hover:text-gold transition-colors">{item.name}</h4>
-                      <div className="flex-1 border-b border-dotted border-forest-dark/20 mx-4 relative top-[-6px]"></div>
-                      <span className="text-forest-dark font-serif font-bold">{item.price}</span>
-                    </div>
-                    <p className="text-forest-dark/60 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Cafe Menu */}
-            <div className={activeTab === 'cafe' ? 'block' : 'hidden'}>
-              <h3 className="font-medium tracking-[0.15em] text-lg text-forest-dark mb-8 md:mb-10 uppercase border-b border-forest-dark/10 pb-4 text-center">Mini Cafe</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 md:gap-y-8">
-                {[
-                  { name: "Spesial Mount Blanc", desc: "Espresso, Orange juice, Foam Cloud, dengan topping Parutan Jeruk.", price: "Rp 25.000" },
-                  { name: "Peach Goddes", desc: "Espresso, Fruit syrup, and Cloud Foam with beans topping.", price: "Rp 23.000" },
-                  { name: "Americano Peach Coffe", desc: "Espresso with Peach syrup and dried orange.", price: "Rp 21.000" },
-                  { name: "Butterschotch Seasalt Latte", desc: "Espresso, Butterschotch, Seasalt with Foam Cloud and Biscuit Topping.", price: "Rp 24.000" },
-                  { name: "Americano ICE/HOT", desc: "Espresso beans Rubusta & arabica.", price: "Rp 17.000" },
-                  { name: "Caffe Latte ICE/HOT", desc: "Espresso, Milk and Foam Milk.", price: "Rp 19.000" },
-                  { name: "Cheese Coffe", desc: "Espresso, Sweetened Condensed Milk, and Cream cheese cloud.", price: "Rp 21.000" },
-                  { name: "Lychee Tea", desc: "Lychee syrup, Green Tea and Lychee fruit.", price: "Rp 18.000" },
-                  { name: "Matcha Latte", desc: "Matcha Premium, Milk, And Vanilla Syrup.", price: "Rp 23.000" },
-                  { name: "Choco Cheese", desc: "Chocolate Malt, Milk and Foam Cheese dan taburan coklat.", price: "Rp 20.000" },
-                  { name: "Wine of Arabic", desc: "Perpaduan Grape syrup, Espresso dan kismis khas arab sebagai topping.", price: "Rp 21.000" },
-                ].map((item, idx) => (
-                  <div key={idx} className="group">
-                    <div className="flex justify-between items-baseline mb-2">
-                      <h4 className="text-forest-dark font-medium text-base group-hover:text-gold transition-colors">{item.name}</h4>
-                      <div className="flex-1 border-b border-dotted border-forest-dark/20 mx-4 relative top-[-6px]"></div>
-                      <span className="text-forest-dark font-serif font-bold">{item.price}</span>
-                    </div>
-                    <p className="text-forest-dark/60 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-20 text-center">
-            <a href="/booking" className="inline-flex items-center gap-3 bg-forest-dark text-cream px-8 py-4 text-[10px] font-medium tracking-[0.15em] hover:bg-gold hover:text-white transition-colors uppercase w-fit">
-              BOOKING SEKARANG &rarr;
-            </a>
-          </div>
-        </div>
-      </section>
       <section id="visit" className="scroll-mt-24 bg-cream border-t border-forest-dark/5 pb-24 md:pb-0">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
           
@@ -475,18 +382,27 @@ export default function Home() {
               <div>
                 <h3 className="text-[9px] font-bold tracking-[0.2em] text-forest-dark/50 uppercase mb-3">JAM BUKA</h3>
                 <div className="text-forest-dark text-sm font-medium space-y-2">
-                  <p className="flex w-full sm:w-64 justify-between"><span>Senin - Kamis</span><span>09.00 - 21.00</span></p>
+                  <p className="flex w-full sm:w-64 justify-between"><span>Sabtu - Kamis</span><span>12.00 - 21.00</span></p>
                   <p className="flex w-full sm:w-64 justify-between"><span>Jumat</span><span>13.00 - 21.00</span></p>
-                  <p className="flex w-full sm:w-64 justify-between"><span>Sabtu - Minggu</span><span>09.00 - 21.00</span></p>
                 </div>
               </div>
 
               {/* CONTACT */}
               <div>
                 <h3 className="text-[9px] font-bold tracking-[0.2em] text-forest-dark/50 uppercase mb-3">CONTACT</h3>
-                <div className="text-forest-dark text-sm font-medium space-y-2">
-                  <p>Instagram: <a href="https://instagram.com/real_co" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">@real.co.id</a></p>
-                  <p>WhatsApp: <a href="https://wa.me/62881036695165" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">+62 881-0366-95165</a></p>
+                <div className="text-forest-dark text-sm font-medium space-y-3">
+                  <p className="flex items-center gap-2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                    <a href="https://www.instagram.com/real._co?igsi=Ynd6NGE3MG5sdnE%3D&utm_source=qr" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">@real._co</a>
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor">
+                      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                    </svg>
+                    <a href="https://wa.me/62881036695165" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">+62 881-0366-95165</a>
+                  </p>
                 </div>
               </div>
             </div>

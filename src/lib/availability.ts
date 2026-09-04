@@ -3,13 +3,13 @@ import { BARBERS } from './data';
 
 const OPENING_HOURS = {
   // 1 = Monday, 7 = Sunday
-  1: { start: 9, end: 21 },
-  2: { start: 9, end: 21 },
-  3: { start: 9, end: 21 },
-  4: { start: 9, end: 21 },
+  1: { start: 12, end: 21 },
+  2: { start: 12, end: 21 },
+  3: { start: 12, end: 21 },
+  4: { start: 12, end: 21 },
   5: { start: 13, end: 21 }, // Friday
-  6: { start: 9, end: 21 },
-  7: { start: 9, end: 21 },
+  6: { start: 12, end: 21 },
+  7: { start: 12, end: 21 },
 };
 
 export async function generateAvailableSlots(barberId: string, dateStr: string, durationMinutes: number) {

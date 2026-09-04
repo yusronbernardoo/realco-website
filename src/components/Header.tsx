@@ -23,7 +23,7 @@ export default function Header() {
     { name: "STYLIST", href: "/#hair-studio" },
     { name: "MENU", href: "/#kafe" },
     { name: "GALERI", href: "/#ruang-kami" },
-    { name: "LAYANAN", href: "/#services" },
+
     { name: "LOKASI", href: "/#visit" },
   ];
 

@@ -70,7 +70,7 @@ WhatsApp: ${data.customer.whatsapp}
 Barber: ${barber.name}
 Service: ${service.name}
 Duration: ${service.duration} min
-Price: Rp ${service.price}
+Price: Rp ${barber.price}
 Booking ID: ${bookingCode}
 ${data.customer.notes ? `\nNotes: ${data.customer.notes}` : ''}`,
       start: { dateTime: startTime.toISOString() },
@@ -101,7 +101,7 @@ ${data.customer.notes ? `\nNotes: ${data.customer.notes}` : ''}`,
       barberName: barber.name,
       date: data.date,
       time: data.time,
-      price: service.price
+      price: barber.price
     });
 
     // 6. Owner Notification (Email)

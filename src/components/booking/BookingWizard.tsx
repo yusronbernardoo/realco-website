@@ -229,7 +229,7 @@ export default function BookingWizard() {
           </div>
           <div className="flex justify-between pt-4 border-t border-forest/5">
             <span className="text-forest/60 text-sm font-medium tracking-widest">TOTAL</span>
-            <span className="text-forest-dark font-bold text-lg">{service?.priceLabel}</span>
+            <span className="text-forest-dark font-bold text-lg">{barber?.priceLabel}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-forest/60 text-sm font-medium tracking-widest">BOOKING ID</span>
@@ -303,7 +303,7 @@ export default function BookingWizard() {
         {state.step === 2 && (
           <div className="space-y-4">
             <p className="text-forest/70 mb-6">Pilih capster favoritmu.</p>
-            <div className="grid grid-cols-3 gap-2 sm:gap-4">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 max-w-md">
               {BARBERS.map((barber) => (
                 <label key={barber.id} className={`block relative border p-3 sm:p-4 cursor-pointer transition-all text-center ${state.barberId === barber.id ? 'border-forest-dark bg-forest/5' : 'border-forest/10 hover:border-forest/30'}`}>
                   <input type="radio" name="barber" value={barber.id} checked={state.barberId === barber.id} onChange={() => updateState({ barberId: barber.id })} className="sr-only" />
@@ -312,7 +312,8 @@ export default function BookingWizard() {
                       <Image src={barber.image} alt={barber.name} fill className="object-cover grayscale" />
                     </div>
                     <h3 className="font-serif text-[11px] sm:text-lg font-bold text-forest-dark truncate w-full">{barber.name}</h3>
-                    <p className="text-gold text-[8px] sm:text-xs font-bold tracking-widest mb-3 uppercase truncate w-full">{barber.role}</p>
+                    <p className="text-gold text-[8px] sm:text-xs font-bold tracking-widest mb-1 uppercase truncate w-full">{barber.role}</p>
+                    <p className="text-forest-dark/80 text-[10px] sm:text-sm font-semibold mb-3">{barber.priceLabel}</p>
                     
                     <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border flex items-center justify-center shrink-0 ${state.barberId === barber.id ? 'border-forest-dark' : 'border-forest/20'}`}>
                       {state.barberId === barber.id && <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-forest-dark rounded-full"></div>}
@@ -518,7 +519,7 @@ export default function BookingWizard() {
               </div>
               <div className="flex justify-between items-center pt-4 border-t border-forest-dark/10">
                 <span className="text-forest-dark/60 text-[10px] font-bold tracking-[0.2em] uppercase">TOTAL</span>
-                <span className="text-forest-dark font-bold text-sm">{SERVICES.find(s => s.id === state.serviceId)?.priceLabel}</span>
+                <span className="text-forest-dark font-bold text-sm">{BARBERS.find(b => b.id === state.barberId)?.priceLabel}</span>
               </div>
             </div>
 
