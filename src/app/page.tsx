@@ -135,7 +135,7 @@ export default function Home() {
           </FadeIn>
 
           {/* Barber Grid Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto mb-12">
+          <div className="grid grid-cols-2 gap-3 sm:gap-8 max-w-2xl mx-auto mb-12">
             {[
               { 
                 id: 'B1',
@@ -161,28 +161,28 @@ export default function Home() {
               <FadeIn key={barber.name} delay={idx * 0.2}>
                 <Link href={`/booking?barber=${barber.id}`} className="group cursor-pointer block h-full">
                   {/* Image Container */}
-                  <div className="relative aspect-[4/5] overflow-hidden bg-forest-dark/50 shadow-2xl mb-6">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-forest-dark/50 shadow-xl sm:shadow-2xl mb-3 sm:mb-6 rounded-sm">
                     <Image src={barber.image} alt={barber.name} fill className={barber.imgClass} />
                     <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-forest-dark/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                     
                     {/* Clean Bottom Overlay inside Image */}
-                    <div className="absolute bottom-0 left-0 w-full p-5 flex justify-between items-end">
+                    <div className="absolute bottom-0 left-0 w-full p-2 sm:p-5 flex flex-col sm:flex-row justify-between sm:items-end items-start gap-1">
                       <div>
-                        <h3 className="font-serif text-2xl md:text-3xl text-cream mb-1">{barber.name}</h3>
-                        <p className="text-[9px] font-bold tracking-[0.2em] text-gold uppercase">{barber.role}</p>
+                        <h3 className="font-serif text-lg sm:text-2xl md:text-3xl text-cream mb-0 sm:mb-1 font-bold">{barber.name}</h3>
+                        <p className="text-[6px] sm:text-[9px] font-bold tracking-[0.2em] text-gold uppercase">{barber.role}</p>
                       </div>
-                      <span className="text-cream text-sm font-serif font-bold">{barber.price}</span>
+                      <span className="text-cream text-[9px] sm:text-sm font-serif font-bold">{barber.price}</span>
                     </div>
                   </div>
                   
                   {/* Text Content Below Image */}
-                  <div className="px-2 text-center md:text-left">
-                    <p className="text-[10px] font-bold tracking-[0.15em] text-gold uppercase mb-3">{barber.specialty}</p>
-                    <p className="text-cream/70 text-xs md:text-sm font-light leading-relaxed mb-5">
+                  <div className="px-1 sm:px-2 text-left">
+                    <p className="text-[7px] sm:text-[10px] font-bold tracking-[0.1em] sm:tracking-[0.15em] text-gold uppercase mb-1 sm:mb-3">{barber.specialty}</p>
+                    <p className="text-cream/70 text-[9px] sm:text-xs font-light leading-snug sm:leading-relaxed mb-2 sm:mb-5 line-clamp-3 sm:line-clamp-none">
                       {barber.bio}
                     </p>
-                    <span className="inline-flex items-center text-[9px] font-medium tracking-[0.15em] text-cream uppercase group-hover:text-gold transition-colors">
-                      Booking Barber Ini <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    <span className="inline-flex items-center text-[7px] sm:text-[9px] font-medium tracking-[0.1em] sm:tracking-[0.15em] text-cream uppercase group-hover:text-gold transition-colors">
+                      Booking Barber Ini <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </Link>
