@@ -95,20 +95,28 @@ export default function Home() {
       </section>
 
       {/* VALUE STRIP */}
-      <section className="bg-off-white py-12 md:py-16 px-6 border-b border-forest-dark/5">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-y-12 lg:gap-6 lg:divide-x divide-forest-dark/10">
+      <section className="bg-off-white py-16 md:py-24 px-6 border-b border-forest-dark/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: Scissors, title: "BARBER PROFESIONAL", desc: "Hasil rapi, presisi, dan sesuai gayamu." },
-            { icon: Coffee, title: "KOPI BERKUALITAS", desc: "Biji pilihan, racikan terbaik setiap harinya." },
-            { icon: Armchair, title: "TEMPAT NYAMAN", desc: "Suasana santai untuk gaya dan relaksasi." },
-            { icon: CalendarCheck, title: "BOOKING MUDAH", desc: "Atur jadwalmu dengan mudah dan tanpa antri." }
+            { icon: Scissors, title: "CAPSTER HANDAL", desc: "Potongan detail dan presisi. Tinggal request, capster kita siap eksekusi." },
+            { icon: Coffee, title: "SIGNATURE COFFEE", desc: "Nunggu giliran potong lebih asik ditemenin racikan kopi andalan kita." },
+            { icon: Armchair, title: "VIBE NYAMAN", desc: "Ruangan bersih, full AC, dan asik buat nyantai sejenak dari rutinitas." },
+            { icon: CalendarCheck, title: "BEBAS ANTRI", desc: "Tinggal booking online, pilih jam, datang langsung eksekusi tanpa ribet." }
           ].map((item, idx) => (
-            <div key={idx} className="flex flex-col items-center text-center px-2 sm:px-8">
-              <div className="flex flex-col items-center gap-2 mb-3">
-                <item.icon className="w-6 h-6 text-forest-dark mb-1" strokeWidth={1} />
-                <h3 className="font-medium tracking-[0.15em] text-[9px] md:text-[10px] text-forest-dark uppercase">{item.title}</h3>
+            <div key={idx} className="group relative bg-white p-8 md:p-10 border border-forest-dark/5 hover:border-gold/30 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between overflow-hidden">
+              {/* Background Watermark Number */}
+              <span className="absolute -bottom-4 -right-4 text-8xl font-serif font-black text-forest-dark opacity-5 group-hover:text-gold group-hover:opacity-10 transition-all duration-500 select-none z-0 pointer-events-none">
+                0{idx + 1}
+              </span>
+              
+              <div className="relative z-10 pointer-events-none">
+                <div className="w-14 h-14 bg-forest-dark/5 group-hover:bg-gold/10 rounded-full flex items-center justify-center mb-8 transition-colors duration-500">
+                  <item.icon className="w-6 h-6 text-forest-dark group-hover:text-gold transition-colors duration-500" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-serif text-lg font-bold text-forest-dark mb-4 tracking-wide group-hover:text-gold transition-colors duration-500">{item.title}</h3>
+                <div className="w-8 h-[2px] bg-forest-dark/10 group-hover:bg-gold group-hover:w-16 transition-all duration-500 mb-5"></div>
+                <p className="text-forest-dark/70 text-xs sm:text-sm leading-relaxed pointer-events-auto pr-4">{item.desc}</p>
               </div>
-              <p className="text-forest-dark/60 text-[10px] md:text-xs font-medium leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
